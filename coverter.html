@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>converter</title>
+</head>
+<body>
+</html>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(162, 149, 174);
+            align-items: center;
+            height: 100vh;
+        }
+        .converter {
+            background: white;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+        }
+     input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="converter">
+        <h1>Gram → Kilogram</h1>
+        <input type="number" id="grams" placeholder="Enter grams">
+        <button onclick="convert()">Convert</button>
+        <p id="result">      </p>
+
+    </div>
+    <script>
+        function convert() {
+            let grams = document.getElementById("grams").value;
+            let kilograms = grams / 1000;
+            document.getElementById("result").textContent =
+                kilograms + " kg";
+        }
+    </script>
+
+</body>
+</html>

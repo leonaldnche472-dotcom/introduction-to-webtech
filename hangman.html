@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="hangman.css">
+</head>
+<body>
+
+    <main class="game-container">
+
+        <!-- Game Introduction -->
+        <header class="game-header">
+            <h1>LEONALDS WORD TRAP</h1>
+        </header>
+
+        <!-- Game Information -->
+        <section class="game-information">
+
+            <div class="info-box">
+                <span>Category</span>
+                <h3 id="category-name">Animals</h3>
+            </div>
+
+            <div class="info-box">
+                <span>Score</span>
+                <h3 id="player-score">0</h3>
+            </div>
+        </section>
+
+        <!-- Hangman Drawing Area -->
+        <section class="drawing-section">
+
+            <svg id="hangman-drawing" viewBox="0 0 250 230">
+
+                <line x1="30" y1="210" x2="150" y2="210"/>
+                <line x1="60" y1="210" x2="60" y2="20"/>
+                <line x1="60" y1="20" x2="155" y2="20"/>
+                <line x1="155" y1="20" x2="155" y2="45"/>
+
+                <circle id="head" cx="155" cy="65" r="20"/>
+                <line id="body" x1="155" y1="85" x2="155" y2="145"/>
+                <line id="left-arm" x1="155" y1="100" x2="125" y2="125"/>
+                <line id="right-arm" x1="155" y1="100" x2="185" y2="125"/>
+                <line id="left-leg" x1="155" y1="145" x2="130" y2="180"/>
+                <line id="right-leg" x1="155" y1="145" x2="180" y2="180"/>
+
+            </svg>
+
+        </section>
+
+        <!-- Hidden Word -->
+        <section class="word-section">
+
+            <p class="instruction">Guess the hidden word</p>
+
+            <div id="word-display">
+                <!-- JavaScript will display the hidden letters here -->
+            </div>
+
+        </section>
+
+        <!-- Keyboard -->
+        <section class="keyboard-section">
+
+            <p class="instruction">Choose a letter</p>
+
+            <div id="letter-keyboard">
+                <!-- JavaScript will generate the alphabet here -->
+            </div>
+
+        </section>
+
+        <!-- Game Controls -->
+        <section class="game-controls">
+
+            <button id="hint-button" type="button">
+                Get a Hint
+            </button>
+
+            <button id="new-game-button" type="button">
+                New Game
+            </button>
+
+        </section>
+
+
+        <!-- Hint Display -->
+        <div id="hint-display" aria-live="polite">
+            Your hint will appear here.
+        </div>
+
+
+        <!-- Game Result -->
+        <div id="game-message" aria-live="polite">
+            GOOD LUCK
+        </div>
+
+        <!-- Difficulty Selection -->
+        <section class="difficulty-section">
+
+            <label for="difficulty-level">Choose Level:</label>
+
+            <select id="difficulty-level">
+                <option value="easy">Easy</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </section>
+
+    </main>
+    <script src="hangman.js"></script>
+</body>
+</html>
